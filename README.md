@@ -1,6 +1,10 @@
 # spring-boot-dynamicdatasource
 
 
+mysql脚本语句包含了本项目中的主从两个数据库中涉及的表的创建脚本语句，其中slave表中的url的值应该如下：
+
+jdbc:mysql://localhost:3306/slave?useUnicode=true&autoReconnect=true&useSSL=false&characterEncoding=utf-8&useSSL=true
+
 利用AOP+注解实现多数据源的动态切换
 
 
