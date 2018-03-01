@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.appleyk</groupId>
+	<artifactId>spring-boot-dynamicdatasource</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>DynamicDataSource</name>
+	<description>动态数据源切换</description>
+
+	<!-- 继承官网最新父POM【假设当前项目不再继承其他POM】 -->
+	<!-- http://projects.spring.io/spring-boot/#quick-start -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+	</parent>
+
+	<!-- 使用Java8，嘗試使用新特新【stream和lambda】 -->
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<!-- Starter POMs是可以包含到应用中的一个方便的依赖关系描述符集合 -->
+		<!-- 该Starters包含很多你搭建项目， 快速运行所需的依赖， 并提供一致的， 管理的传递依赖集。 -->
+		<!-- 大多数的web应用都使用spring-boot-starter-web模块进行快速搭建和运行。 -->
+		<!-- spring-boot-starter-web -->
+		<!-- 对全栈web开发的支持， 包括Tomcat和 spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- 添加Mybatis、Spring-Mybatis依赖 -->
+		<!-- mybatis-spring-boot-starter继承树那是相当全面 -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<!-- jackson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.41</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+		</dependency>
+
+		<!-- MySql驱动依赖 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- Spring 单元测试 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- 添加热部署 devtools：监听文件变动 -->
+		<!-- 当Java文件改动时，Spring-boo会快速重新启动 -->
+		<!-- 最简单的测试，就是随便找一个文件Ctrl+S一下，就可以看到效果 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<!-- optional=true,依赖不会传递 -->
+			<!-- 本项目依赖devtools；若依赖本项目的其他项目想要使用devtools，需要重新引入 -->
+			<optional>true</optional>
+		</dependency>
+
+		<!-- JUnit单元测试 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		
+		<!-- mybatis通用mapper -->
+		<!-- https://mvnrepository.com/artifact/tk.mybatis/mapper-spring-boot-starter -->
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper-spring-boot-starter</artifactId>
+			<version>1.1.5</version>
+		</dependency>
+		<!-- aop面向切面编程 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.20</version>
+		</dependency>
+	</dependencies>
+</project>
